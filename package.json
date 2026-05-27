@@ -1,7 +1,7 @@
 {
   "name": "sevakund-website",
   "private": true,
-  "sideEffects": false,
+  "sideEffects": ["*.css", "src/lib/i18n.ts"],
   "type": "module",
   "scripts": {
     "dev": "vite dev",

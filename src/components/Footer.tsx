@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import {
   Mail,
@@ -13,6 +12,7 @@ import {
 } from "lucide-react";
 import { Logo } from "./Logo";
 import { useState } from "react";
+import { Link } from "./AppLink";
 
 const NGO = {
   address:

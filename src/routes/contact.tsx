@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, MapPin, Send, MessageCircle, Check } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
 import hero3 from "@/assets/hero-3.jpg";
+
+const createFileRoute = (_path: string) => (config: unknown) => config;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -31,7 +32,7 @@ const NGO = {
   email: "sevakund01@gmail.com",
 };
 
-function ContactPage() {
+export default function ContactPage() {
   const { t } = useTranslation();
   const [sent, setSent] = useState(false);
   const [f, setF] = useState({ name: "", email: "", phone: "", subject: "", message: "" });

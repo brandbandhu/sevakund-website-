@@ -1,4 +1,3 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -27,8 +26,11 @@ import causeWomen from "@/assets/cause-women.jpg";
 import causeEnv from "@/assets/cause-environment.jpg";
 import causeHealth from "@/assets/cause-health.jpg";
 import causeRelief from "@/assets/cause-relief.jpg";
+import { Link } from "@/components/AppLink";
 import { Counter } from "@/components/Counter";
 import { SectionHeader } from "@/components/SectionHeader";
+
+const createFileRoute = (_path: string) => (config: unknown) => config;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,7 +53,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-function HomePage() {
+export default function HomePage() {
   return (
     <>
       <HeroSection />

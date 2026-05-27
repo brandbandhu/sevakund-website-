@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Heart, Check, Shield, ReceiptText, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
 import causeRelief from "@/assets/cause-relief.jpg";
+
+const createFileRoute = (_path: string) => (config: unknown) => config;
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -29,7 +30,7 @@ export const Route = createFileRoute("/donate")({
 
 type Mode = "monthly" | "onetime";
 
-function DonatePage() {
+export default function DonatePage() {
   const { t } = useTranslation();
   const [mode, setMode] = useState<Mode>("monthly");
   const [amount, setAmount] = useState<number>(99);

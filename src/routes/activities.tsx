@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {
@@ -20,6 +19,8 @@ import causeWomen from "@/assets/cause-women.jpg";
 import causeEnv from "@/assets/cause-environment.jpg";
 import causeHealth from "@/assets/cause-health.jpg";
 import causeRelief from "@/assets/cause-relief.jpg";
+
+const createFileRoute = (_path: string) => (config: unknown) => config;
 
 export const Route = createFileRoute("/activities")({
   head: () => ({
@@ -52,7 +53,7 @@ const IMAGES = [
   causeWomen,
 ];
 
-function ActivitiesPage() {
+export default function ActivitiesPage() {
   const { t } = useTranslation();
   const items = t("activities.list", { returnObjects: true }) as Array<{ t: string; d: string }>;
 

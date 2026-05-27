@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {
@@ -14,6 +13,8 @@ import {
 import { PageHero } from "@/components/Breadcrumb";
 import { SectionHeader } from "@/components/SectionHeader";
 import causeHealth from "@/assets/cause-health.jpg";
+
+const createFileRoute = (_path: string) => (config: unknown) => config;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -36,7 +37,7 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-function AboutPage() {
+export default function AboutPage() {
   const { t } = useTranslation();
   const pillars = t("about.pillars", { returnObjects: true }) as Array<{ t: string; d: string }>;
   const pillarIcons = [Stethoscope, GraduationCap, Users, Leaf];

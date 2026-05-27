@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Award, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
 import { SectionHeader } from "@/components/SectionHeader";
 import founderImg from "@/assets/founder.jpg";
+
+const createFileRoute = (_path: string) => (config: unknown) => config;
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
@@ -25,7 +26,7 @@ export const Route = createFileRoute("/founder")({
   component: FounderPage,
 });
 
-function FounderPage() {
+export default function FounderPage() {
   const { t } = useTranslation();
   const awards = t("founder.awards", { returnObjects: true }) as Array<{
     y: string;

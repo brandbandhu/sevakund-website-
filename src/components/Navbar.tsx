@@ -1,7 +1,8 @@
-import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Heart } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "@/lib/navigation";
+import { Link } from "./AppLink";
 import { Logo } from "./Logo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 

@@ -59,7 +59,7 @@ export const originalImages = {
   heroRelief: curatedImage("community-relief.jpg"),
   heroBlood: curatedImage("programs-collage.jpg"),
   heroEducation: curatedImage("education-support.jpg"),
-  founder: curatedImage("founder-awards.jpg"),
+  founder: curatedImage("anil-kumar-portrait.jpg"),
   founderHero: curatedImage("founder-awards.jpg"),
   about: curatedImage("programs-collage.jpg"),
   activities: curatedImage("community-relief.jpg"),

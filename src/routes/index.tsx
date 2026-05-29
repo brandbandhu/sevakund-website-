@@ -18,17 +18,11 @@ import {
   ShieldCheck,
   BadgeCheck,
 } from "lucide-react";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
-import founderImg from "@/assets/founder.jpg";
-import causeWomen from "@/assets/cause-women.jpg";
-import causeEnv from "@/assets/cause-environment.jpg";
-import causeHealth from "@/assets/cause-health.jpg";
-import causeRelief from "@/assets/cause-relief.jpg";
 import { Link } from "@/components/AppLink";
 import { Counter } from "@/components/Counter";
 import { SectionHeader } from "@/components/SectionHeader";
+import { pdfGalleryImages } from "@/lib/pdf-gallery";
+import { originalImages } from "@/lib/original-images";
 
 const createFileRoute = (_path: string) => (config: unknown) => config;
 
@@ -70,9 +64,9 @@ export default function HomePage() {
 
 /* HERO */
 const slides = [
-  { img: hero1, key: "relief" as const },
-  { img: hero2, key: "blood" as const },
-  { img: hero3, key: "education" as const },
+  { img: originalImages.heroRelief, key: "relief" as const },
+  { img: originalImages.heroBlood, key: "blood" as const },
+  { img: originalImages.heroEducation, key: "education" as const },
 ];
 
 function HeroSection() {
@@ -251,7 +245,7 @@ function AboutPreview() {
         >
           <div className="grid grid-cols-2 gap-4">
             <img
-              src={causeHealth}
+              src={originalImages.health}
               loading="lazy"
               width={1200}
               height={900}
@@ -259,7 +253,7 @@ function AboutPreview() {
               className="rounded-3xl shadow-elevated h-64 md:h-80 w-full object-cover"
             />
             <img
-              src={causeWomen}
+              src={originalImages.women}
               loading="lazy"
               width={1200}
               height={900}
@@ -267,7 +261,7 @@ function AboutPreview() {
               className="rounded-3xl shadow-elevated h-48 md:h-60 w-full object-cover mt-12"
             />
             <img
-              src={causeEnv}
+              src={originalImages.environment}
               loading="lazy"
               width={1200}
               height={900}
@@ -275,7 +269,7 @@ function AboutPreview() {
               className="rounded-3xl shadow-elevated h-48 md:h-60 w-full object-cover -mt-4"
             />
             <img
-              src={causeRelief}
+              src={originalImages.relief}
               loading="lazy"
               width={1200}
               height={900}
@@ -304,12 +298,12 @@ function AboutPreview() {
 function CausesSection() {
   const { t } = useTranslation();
   const causes = [
-    { key: "health", Icon: Stethoscope, img: causeHealth },
-    { key: "education", Icon: GraduationCap, img: hero3 },
-    { key: "women", Icon: Users, img: causeWomen },
-    { key: "environment", Icon: Leaf, img: causeEnv },
-    { key: "relief", Icon: LifeBuoy, img: causeRelief },
-    { key: "agri", Icon: Wheat, img: hero1 },
+    { key: "health", Icon: Stethoscope, img: originalImages.health },
+    { key: "education", Icon: GraduationCap, img: originalImages.education },
+    { key: "women", Icon: Users, img: originalImages.women },
+    { key: "environment", Icon: Leaf, img: originalImages.environment },
+    { key: "relief", Icon: LifeBuoy, img: originalImages.relief },
+    { key: "agri", Icon: Wheat, img: originalImages.agriculture },
   ] as const;
   return (
     <section className="py-20 md:py-32 bg-secondary">
@@ -373,7 +367,7 @@ function FounderHighlight() {
           <div className="relative">
             <div className="absolute -inset-6 gradient-gold rounded-3xl blur-2xl opacity-40" />
             <img
-              src={founderImg}
+              src={originalImages.founder}
               alt="Dr. Anilkumar Gaikwad"
               width={1024}
               height={1280}
@@ -498,7 +492,19 @@ function TestimonialsSection() {
 
 /* GALLERY PREVIEW */
 function GalleryPreview() {
-  const imgs = [hero1, causeHealth, hero3, causeWomen, causeEnv, hero2, causeRelief, hero1];
+  const imgs =
+    pdfGalleryImages.length > 0
+      ? pdfGalleryImages.slice(0, 12).map((image) => image.src)
+      : [
+          originalImages.heroRelief,
+          originalImages.health,
+          originalImages.education,
+          originalImages.women,
+          originalImages.environment,
+          originalImages.heroBlood,
+          originalImages.relief,
+          originalImages.agriculture,
+        ];
   return (
     <section className="py-20 md:py-32">
       <div className="container-x mx-auto max-w-7xl">
@@ -521,6 +527,14 @@ function GalleryPreview() {
               />
             </motion.div>
           ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Link
+            to="/gallery"
+            className="inline-flex items-center gap-2 font-bold text-primary hover:text-accent transition"
+          >
+            View full gallery <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

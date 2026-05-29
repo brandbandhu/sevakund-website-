@@ -11,6 +11,7 @@ const navItems = [
   { to: "/about", key: "about" as const },
   { to: "/founder", key: "founder" as const },
   { to: "/activities", key: "activities" as const },
+  { to: "/gallery", key: "gallery" as const },
   { to: "/donate", key: "donate" as const },
   { to: "/contact", key: "contact" as const },
 ];

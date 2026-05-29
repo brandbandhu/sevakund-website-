@@ -12,13 +12,7 @@ import {
   Building2,
 } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
-import causeWomen from "@/assets/cause-women.jpg";
-import causeEnv from "@/assets/cause-environment.jpg";
-import causeHealth from "@/assets/cause-health.jpg";
-import causeRelief from "@/assets/cause-relief.jpg";
+import { originalImages } from "@/lib/original-images";
 
 const createFileRoute = (_path: string) => (config: unknown) => config;
 
@@ -42,15 +36,15 @@ export const Route = createFileRoute("/activities")({
 
 const ICONS = [Droplet, Eye, BookOpen, LifeBuoy, Home, Heart, Utensils, TreePine, Building2];
 const IMAGES = [
-  hero2,
-  causeHealth,
-  hero3,
-  causeRelief,
-  hero1,
-  causeHealth,
-  hero1,
-  causeEnv,
-  causeWomen,
+  originalImages.heroBlood,
+  originalImages.health,
+  originalImages.education,
+  originalImages.relief,
+  originalImages.activities,
+  originalImages.founderHero,
+  originalImages.agriculture,
+  originalImages.environment,
+  originalImages.women,
 ];
 
 export default function ActivitiesPage() {
@@ -63,7 +57,7 @@ export default function ActivitiesPage() {
         title={t("activities.title")}
         subtitle={t("activities.subtitle")}
         breadcrumb={t("nav.activities")}
-        image={hero2}
+        image={originalImages.activities}
       />
 
       <section className="py-20 md:py-28">

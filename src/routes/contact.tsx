@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, MapPin, Send, MessageCircle, Check } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
-import hero3 from "@/assets/hero-3.jpg";
+import { originalImages } from "@/lib/original-images";
 
 const createFileRoute = (_path: string) => (config: unknown) => config;
 
@@ -49,7 +49,7 @@ export default function ContactPage() {
         title={t("contact.title")}
         subtitle={t("contact.subtitle")}
         breadcrumb={t("nav.contact")}
-        image={hero3}
+        image={originalImages.contact}
       />
 
       <section className="py-16 md:py-24">

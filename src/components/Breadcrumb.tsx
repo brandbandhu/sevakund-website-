@@ -15,25 +15,16 @@ export function PageHero({
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 gradient-hero text-white overflow-hidden">
       {image && (
-        <>
-          <img
-            src={image}
-            alt=""
-            loading="eager"
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-70 blur-xl"
-          />
-          <img
-            src={image}
-            alt=""
-            loading="eager"
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-contain object-right md:object-center"
-          />
-        </>
+        <img
+          src={image}
+          alt=""
+          loading="eager"
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-ink/15" />
       <div className="container-x mx-auto max-w-7xl relative">
         <nav className="flex items-center gap-2 text-xs md:text-sm text-white/70 mb-4">
           <Link to="/" className="inline-flex items-center gap-1 hover:text-white">

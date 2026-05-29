@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Heart, Check, Shield, ReceiptText, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
-import causeRelief from "@/assets/cause-relief.jpg";
+import { originalImages } from "@/lib/original-images";
 
 const createFileRoute = (_path: string) => (config: unknown) => config;
 
@@ -70,7 +70,7 @@ export default function DonatePage() {
         title={t("donate.title")}
         subtitle={t("donate.subtitle")}
         breadcrumb={t("nav.donate")}
-        image={causeRelief}
+        image={originalImages.donate}
       />
 
       <section className="py-16 md:py-24">

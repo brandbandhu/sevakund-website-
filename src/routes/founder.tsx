@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Award, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
 import { SectionHeader } from "@/components/SectionHeader";
-import founderImg from "@/assets/founder.jpg";
+import { originalImages } from "@/lib/original-images";
 
 const createFileRoute = (_path: string) => (config: unknown) => config;
 
@@ -45,7 +45,7 @@ export default function FounderPage() {
         title={t("founder.name")}
         subtitle={t("founder.title")}
         breadcrumb={t("nav.founder")}
-        image={founderImg}
+        image={originalImages.founderHero}
       />
 
       {/* Bio */}
@@ -60,7 +60,7 @@ export default function FounderPage() {
             <div className="relative">
               <div className="absolute -inset-4 gradient-gold rounded-3xl blur-2xl opacity-40" />
               <img
-                src={founderImg}
+                src={originalImages.founder}
                 alt="Dr. Anilkumar Gaikwad"
                 width={1024}
                 height={1280}

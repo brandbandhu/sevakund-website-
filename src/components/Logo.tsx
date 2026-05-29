@@ -10,7 +10,6 @@ export function Logo({
   variant?: "dark" | "light";
 }) {
   const text = variant === "light" ? "text-white" : "text-[var(--ink)]";
-  const sub = variant === "light" ? "text-white/80" : "text-muted-foreground";
   return (
     <div className="flex items-center gap-3">
       <svg viewBox="0 0 100 110" className={className} aria-hidden="true">
@@ -38,10 +37,7 @@ export function Logo({
       </svg>
       {showText && (
         <div className="leading-tight">
-          <div className={`font-display font-bold text-base md:text-lg ${text}`}>Dr. A.G.S.S.T</div>
-          <div className={`text-[10px] md:text-xs tracking-wide ${sub}`}>
-            Samajik Sevakund Trust
-          </div>
+          <div className={`font-display font-bold text-base md:text-lg ${text}`}>Sevakund sanstha</div>
         </div>
       )}
     </div>

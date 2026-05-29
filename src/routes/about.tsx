@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "@/components/Breadcrumb";
 import { SectionHeader } from "@/components/SectionHeader";
-import causeHealth from "@/assets/cause-health.jpg";
+import { originalImages } from "@/lib/original-images";
 
 const createFileRoute = (_path: string) => (config: unknown) => config;
 
@@ -48,7 +48,7 @@ export default function AboutPage() {
         title={t("about.title")}
         subtitle={t("about.body")}
         breadcrumb={t("nav.about")}
-        image={causeHealth}
+        image={originalImages.about}
       />
 
       {/* VMV cards */}
@@ -112,12 +112,12 @@ export default function AboutPage() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            src={causeHealth}
+            src={originalImages.about}
             alt="Story"
             width={1200}
             height={900}
             loading="lazy"
-            className="rounded-3xl shadow-elevated w-full"
+            className="aspect-[4/3] rounded-3xl shadow-elevated w-full object-cover"
           />
           <motion.div
             initial={{ opacity: 0, x: 30 }}

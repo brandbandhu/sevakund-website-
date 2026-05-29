@@ -10,12 +10,14 @@ import ActivitiesPage from "./routes/activities";
 import ContactPage from "./routes/contact";
 import DonatePage from "./routes/donate";
 import FounderPage from "./routes/founder";
+import GalleryPage from "./routes/gallery";
 
 const titles: Record<string, string> = {
   "/": "Dr. A.G.S.S.T Trust - Together We Can Transform Lives",
   "/about": "About Us - Dr. A.G.S.S.T Trust",
   "/founder": "Founder - Dr. Anilkumar Baliram Gaikwad",
   "/activities": "Our Activities - Dr. A.G.S.S.T Trust",
+  "/gallery": "Gallery - Dr. A.G.S.S.T Trust",
   "/donate": "Donate - Dr. A.G.S.S.T Trust",
   "/contact": "Contact - Dr. A.G.S.S.T Trust",
 };
@@ -54,6 +56,8 @@ function CurrentPage() {
       return <FounderPage />;
     case "/activities":
       return <ActivitiesPage />;
+    case "/gallery":
+      return <GalleryPage />;
     case "/donate":
       return <DonatePage />;
     case "/contact":

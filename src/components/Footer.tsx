@@ -72,13 +72,18 @@ export function Footer() {
           <div>
             <h4 className="font-display font-bold text-lg mb-4">{t("footer.quickLinks")}</h4>
             <ul className="space-y-2 text-sm text-white/80">
-              {["home", "about", "founder", "activities", "donate", "contact"].map((k) => (
-                <li key={k}>
-                  <Link to={k === "home" ? "/" : `/${k}`} className="hover:text-accent transition">
-                    {t(`nav.${k}`)}
-                  </Link>
-                </li>
-              ))}
+              {["home", "about", "founder", "activities", "gallery", "donate", "contact"].map(
+                (k) => (
+                  <li key={k}>
+                    <Link
+                      to={k === "home" ? "/" : `/${k}`}
+                      className="hover:text-accent transition"
+                    >
+                      {t(`nav.${k}`)}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
@@ -155,8 +160,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/60">
           <p>
-            © {new Date().getFullYear()} Dr. Anilkumar Gaikwad Samajik Sevakund Trust.{" "}
-            {t("footer.rights")}
+            © {new Date().getFullYear()} Sevakund sanstha. {t("footer.rights")}
           </p>
           <p>
             {t("footer.regNo")}: {NGO.reg} · {t("footer.pan")}: {NGO.pan} · {t("footer.ngoId")}:{" "}
